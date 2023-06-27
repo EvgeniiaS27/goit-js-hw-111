@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
 
 export async function fetchImages(search, page) {
   const API_KEY = '37793380-846502e5eebe78c5507a83779';
@@ -14,6 +15,8 @@ export async function fetchImages(search, page) {
       return data;
     }
   } catch (err) {
-    return console.log(err);
+    Notiflix.Notify.failure(
+      'Sorry, there are no images matching your search query. Please try again.'
+    );
   }
 }
