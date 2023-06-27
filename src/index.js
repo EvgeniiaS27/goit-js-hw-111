@@ -33,7 +33,7 @@ async function onButtonSearchSubmit(event) {
     return;
   }
 
-  await fetchImages(currentSearch)
+  await fetchImages(currentSearch, currentPage)
     .then(images => {
       const cards = images.hits;
       const totalCard = images.totalHits;
